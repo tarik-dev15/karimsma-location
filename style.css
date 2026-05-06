@@ -1,0 +1,723 @@
+
+/* ===== RESET PROPRE ===== */
+* {
+  margin: 0;
+  padding: 0; /* correction */
+  box-sizing: border-box; /* correction */
+}
+
+/* ===== STYLE GLOBAL ===== */
+body {
+  font-family: "Poppins", sans-serif; /* correction nom */
+  background-color: #fdfffe;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 50px;
+}
+/* ===== SECTION BANNIÈRE PARTENAIRE ===== */
+.banner-partner {
+  width: 100%;
+  background-color: #ffffff; /* Même fond que votre body */
+  padding: 20px 0 50px 0; /* Espace au dessus et en dessous */
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container {
+  text-align: center;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.banner-img {
+  width: 100%;
+  max-width: 850px; /* Taille optimale pour ne pas pixeliser */
+  height: auto;
+  margin-bottom: 25px;
+  /* Effet d'ombre douce comme sur vos logos/cartes */
+}
+
+.banner-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0a1f44; /* Votre bleu nuit professionnel */
+  text-transform: uppercase; /* Look Luxe comme votre logo */
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Ajout d'une petite barre rouge de rappel sous le texte */
+.banner-text::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #e63946; /* Votre rouge dynamique */
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* LOGO */
+/* ===== LOGO STYLE AMÉLIORÉ ===== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Animation au survol du logo complet */
+.logo-container:hover {
+  transform: scale(1.02);
+}
+
+.logo-container img {
+  width: 80px; /* Taille équilibrée */
+  height: auto;
+  filter: drop-shadow(
+    0px 4px 4px rgba(0, 0, 0, 0.1)
+  ); /* Légère ombre sur l'image */
+}
+
+.logo-text {
+  font-size: 24px; /* Plus grand pour la lisibilité */
+  font-weight: 700; /* Plus épais */
+  letter-spacing: 1px; /* Espacement moderne entre les lettres */
+  color: #0a1f44; /* Bleu nuit professionnel */
+  text-transform: uppercase; /* Donne un look "Marque de Luxe" */
+  font-style: normal; /* On enlève l'italique pour plus de sérieux */
+}
+
+/* Le mot "Auto" en Rouge */
+.logo-text .accent {
+  color: #e63946; /* Ton rouge dynamique */
+  position: relative;
+}
+
+/* Petit détail : une fine ligne sous le logo au survol */
+.logo-container:hover .logo-text .accent::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e63946;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0a1f44;
+  font-weight: 500;
+}
+
+/* effet hover */
+.navbar a:hover {
+  color: #e74c3c;
+  transition: 0.4 ease;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 40px; /* espace entre texte et image */
+}
+
+/* TEXTE */
+.hero-text {
+  width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+/* IMAGE */
+.hero-image {
+  width: 120%;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/*===== SECTION VOITURE=====*/
+.cars {
+  padding: 50px;
+}
+
+.cars h2 {
+  /* 1. Centrage du bloc lui-même */
+  margin: 0 auto 80px auto; /* Le "auto" sur les côtés centre un bloc qui a une width */
+
+  /* 2. Style et dimensions */
+  width: 300px; /* Un peu plus large pour que le texte soit à l'aise */
+  height: 50px;
+  background-color: #e5e7e6;
+  font-size: 22px;
+  border-radius: 8px; /* Optionnel : pour adoucir les angles */
+
+  /* 3. Centrage du texte à l'intérieur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* 4. Ombre par défaut */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Pour que le hover soit fluide */
+}
+
+/* 5. Effet au survol (Hover) */
+.cars h2:hover {
+  background-color: #e63946; /* Change en rouge au survol */
+  color: white; /* Texte en blanc pour le contraste */
+  transform: scale(1.1); /* S'agrandit légèrement */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus forte */
+  cursor: pointer;
+}
+
+/* 1. CONTENEUR PRINCIPAL */
+.cards-wrapper {
+  display: flex;
+  justify-content: center; /* Centre les cartes horizontalement */
+  flex-wrap: wrap; /* Passage à la ligne auto */
+  gap: 50px;
+  padding: 40px 20px;
+}
+
+/* 2. STYLE DE LA CARTE (Format plus grand) */
+.card {
+  width: 350px;
+  height: 600px; /* Hauteur augmentée comme demandé */
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Transition douce pour toutes les modifs */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 2px solid transparent; /* Prépare la bordure pour le clic */
+}
+.cars h2 {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 40px;
+  background-color: #e5e7e6;
+  border-radius: 30px;
+  flex-grow: 1; /* Prend tout l'espace restant en bas */
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+  justify-content: center; /* Centre le texte horizontalement */
+}
+/* 3. IMAGE DANS LA CARTE */
+.card img {
+  width: 100%;
+  height: 550px; /* Image plus grande pour remplir la carte */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* 4. TEXTE EN DESSOUS */
+.card-text {
+  flex-grow: 1; /* Prend tout l'espace restant en bas */
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+  justify-content: center; /* Centre le texte horizontalement */
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  background: #f23232;
+  transition:
+    background 0.2s,
+    color 0.2s; /* Pour le changement de couleur */
+}
+
+/* 5. EFFET AU SURVOL (HOVER) */
+.card:hover {
+  background-color: #e63946; /* Change en rouge au survol */
+  color: white; /* Texte en blanc pour le contraste */
+  transform: scale(1.1); /* S'agrandit légèrement */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus forte */
+  cursor: pointer;
+}
+
+/* 6. EFFET AU CLIC (CHANGEMENT EN ROUGE) */
+.card:active {
+  background-color: #e63946; /* Fond de la carte devient rouge */
+  border-color: #e63946; /* Bordure devient rouge */
+  transform: scale(0.98); /* Effet d'écrasement léger au clic */
+}
+
+.card:active .card-text {
+  background-color: #e63946; /* Le fond du texte devient rouge aussi */
+  color: white; /* Le texte devient blanc pour être lisible */
+}
+
+.description {
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.description-container {
+  max-width: 850px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column; /* 🔥 clé du problème */
+  text-align: center;
+
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.description h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #0a1f44;
+}
+.description p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+/* STYLE DU BOUTON PAR DÉFAUT */
+.btn-call {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 16px 40px;
+  background-color: #0a1f44; /* Couleur de base (Bleu nuit) */
+  color: #ffffff !important; /* Texte blanc forcé */
+  border-radius: 4px; /* Forme rectangle */
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Animation fluide */
+  border: none;
+  cursor: pointer;
+}
+
+/* STYLE AU SURVOL (HOVER) */
+.btn-call:hover {
+  background-color: #e63946 !important; /* DEVIENT ROUGE */
+  color: #ffffff !important; /* Reste blanc */
+  transform: scale(1.05); /* S'agrandit légèrement */
+  box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4); /* Ombre rouge */
+}
+
+/* Bouton WhatsApp Flottant */
+.whatsapp-sticky {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Vert WhatsApp */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Toujours au-dessus du reste */
+  transition: all 0.3s ease;
+}
+
+.whatsapp-sticky img {
+  width: 25px;
+  height: 25px;
+}
+
+.whatsapp-sticky:hover {
+  transform: scale(1.1); /* S'agrandit au survol */
+  background-color: #128c7e; /* Vert plus foncé */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== SECTION SUPPORT / FEATURES ===== */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 50px;
+  background-color: #ffffff; /* Fond blanc pour trancher avec le reste */
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: #f9f9f9;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-bottom: 4px solid transparent; /* Prépare l'effet hover */
+}
+
+.feature-icon {
+  font-size: 45px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  color: #0a1f44;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* EFFET AU SURVOL */
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 4px solid #e63946; /* Soulignement rouge au survol */
+}
+
+/* ===== SECTION SERVICES PREMIUM ===== */
+.services-premium {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 50px;
+  background-color: #0a1f44; /* Fond Bleu Nuit pour le contraste */
+  flex-wrap: wrap;
+}
+
+.service-box {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  text-align: center;
+  color: white; /* Texte en blanc sur fond bleu */
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.icon-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #e5e7e6;
+  transition: all 0.3s ease;
+}
+
+.service-box h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e63946; /* Titre en rouge pour attirer l'oeil */
+  text-transform: uppercase;
+}
+
+.service-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* EFFET HOVER */
+.service-box:hover .icon-wrapper {
+  background-color: #e63946; /* L'icône devient rouge au survol */
+  transform: rotateY(180deg); /* Petit effet de rotation sympa */
+  color: white;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #0a1f44; /* Même couleur que la section Services */
+  color: white;
+  padding: 60px 50px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Ligne discrète en haut */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-about p {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.footer h4 {
+  color: #e63946; /* Rouge pour les titres du footer */
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  opacity: 1;
+  color: #e63946;
+  padding-left: 5px; /* Petit décalage au survol */
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Bas du footer */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-sticky span {
+    display: none;
+  }
+  .whatsapp-sticky {
+    padding: 15px;
+    border-radius: 50%;
+  }
+}
+
+/* =========================
+   RESPONSIVE TABLET + MOBILE
+   ========================= */
+
+/* TABLETTE */
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 30px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .cards-wrapper {
+    gap: 30px;
+  }
+
+  .card {
+    width: 300px;
+    height: auto;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  .features,
+  .services-premium {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* HEADER */
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    padding: 25px 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+  }
+
+  /* IMPORTANT FIX */
+  .hero-image {
+    width: 100%;
+  }
+
+  /* TITRE SECTION */
+  .cars h2 {
+    width: 90%;
+    font-size: 24px;
+  }
+
+  /* CARTES */
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .card img {
+    height: 220px;
+  }
+
+  /* FEATURES */
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 90%;
+  }
+
+  /* SERVICES */
+  .services-premium {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* DESCRIPTION */
+  .description {
+    padding: 30px 15px;
+  }
+
+  .description-container {
+    padding: 25px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 20px;
+  }
+}
+
+/* PETIT MOBILE */
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .hero-text h1 {
+    font-size: 20px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 18px;
+  }
+
+  .btn-call {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   ANIMATION SCROLL
+   ========================= */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
